@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/upcoming_match_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="4dp"
+    android:orientation="vertical"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp"
+    app:cardMaxElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/upcoming_match_round"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Match 17"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/upcoming_match_home_team"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintBottom_toBottomOf="@+id/upcoming_match_strip"
+            app:layout_constraintEnd_toStartOf="@+id/upcoming_match_strip"
+            app:layout_constraintStart_toStartOf="@+id/upcoming_match_round"
+            app:layout_constraintTop_toTopOf="@+id/upcoming_match_strip"
+            tools:text="Arsenal" />
+
+        <TextView
+            android:id="@+id/upcoming_match_strip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@string/versus"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/upcoming_match_round"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/upcoming_match_away_team"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintBottom_toBottomOf="@+id/upcoming_match_strip"
+            app:layout_constraintEnd_toEndOf="@+id/upcoming_match_time"
+            app:layout_constraintStart_toEndOf="@+id/upcoming_match_strip"
+            app:layout_constraintTop_toTopOf="@+id/upcoming_match_strip"
+            tools:text="Brighton" />
+
+        <TextView
+            android:id="@+id/upcoming_match_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            tools:text="09/12/19"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="@+id/upcoming_match_time"
+            app:layout_constraintEnd_toStartOf="@+id/upcoming_match_time"
+            app:layout_constraintTop_toTopOf="@+id/upcoming_match_time" />
+
+        <TextView
+            android:id="@+id/upcoming_match_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            tools:text="20:00:00"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">FootballMatchSchedule</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="country_name">
+        <item>England</item>
+        <item>France</item>
+        <item>Italy</item>
+        <item>Spain</item>
+        <item>Germany</item>
+        <item>Holland</item>
+        <item>Portugal</item>
+        <item>Brazil</item>
+        <item>Argentina</item>
+        <item>USA</item>
+    </string-array>
+
+    <string name="info">Info</string>
+    <string name="league_info">League Info</string>
+    <string name="matches">Matches</string>
+    <string name="division">Division</string>
+    <string name="first_match">First Match</string>
+    <string name="formed">Formed</string>
+    <string name="country">Country</string>
+    <string name="description">Description</string>
+    <string name="link_not_found">Link Not Found</string>
+    <string name="last_match">Recent Match</string>
+    <string name="upcoming_match">Upcoming Match</string>
+    <string name="match">Match %d</string>
+    <string name="versus">vs</string>
+    <string name="match_info">Match Info • %s</string>
+    <string name="match_round">%s • Match %s</string>
+    <string name="strip">-</string>
+    <string name="squad">Squad</string>
+    <string name="goalkeeper">Goalkeeper</string>
+    <string name="defender">Defender</string>
+    <string name="midfielder">Midfielder</string>
+    <string name="forward">Forward</string>
+    <string name="substitutes">Substitutes</string>
+    <string name="match_info_title">Match Info</string>
+    <string name="yellow_card">Yellow Card</string>
+    <string name="ball">Ball</string>
+    <string name="red_card">Red Card</string>
+    <string name="logo_league">League Logo</string>
+    <string name="league_banner">League Banner</string>
+    <string name="logo_twitter">Twitter Logo</string>
+    <string name="logo_facebook">Facebook Logo</string>
+    <string name="logo_youtube">Youtube Logo</string>
+    <string name="logo_web">Web Logo</string>
+</resources>

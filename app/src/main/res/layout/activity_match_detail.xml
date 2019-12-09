@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteX="16dp"
+    tools:layout_editor_absoluteY="16dp"
+    tools:context=".activity.MatchDetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ProgressBar
+            android:id="@+id/progress_match_detail"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/match_detail_info_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:cardMaxElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/match_detail_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Match Info • Soccer" />
+
+                <TextView
+                    android:id="@+id/match_detail_round"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_info"
+                    tools:text="Premier League • Match 17" />
+
+                <TextView
+                    android:id="@+id/match_detail_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/match_detail_info"
+                    tools:text="07/09/12" />
+
+                <TextView
+                    android:id="@+id/match_detail_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="end"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_date"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_date"
+                    tools:text="20:00" />
+
+                <TextView
+                    android:id="@+id/match_detail_home_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="64dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    app:layout_constraintBottom_toBottomOf="@+id/match_detail_strip"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_round"
+                    app:layout_constraintTop_toTopOf="@+id/match_detail_strip"
+                    tools:text="1" />
+
+                <TextView
+                    android:id="@+id/match_detail_strip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/strip"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    app:layout_constraintEnd_toStartOf="@+id/match_detail_away_score"
+                    app:layout_constraintStart_toEndOf="@+id/match_detail_home_score"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_round" />
+
+                <TextView
+                    android:id="@+id/match_detail_away_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="64dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    app:layout_constraintBottom_toBottomOf="@+id/match_detail_strip"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/match_detail_strip"
+                    tools:text="2" />
+
+                <TextView
+                    android:id="@+id/match_detail_home_team"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    app:layout_constraintBottom_toBottomOf="@+id/match_detail_versus"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_home_score"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_home_score"
+                    app:layout_constraintTop_toTopOf="@+id/match_detail_versus"
+                    tools:text="Arsenal" />
+
+                <TextView
+                    android:id="@+id/match_detail_versus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/versus"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_strip"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_strip"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_strip" />
+
+                <TextView
+                    android:id="@+id/match_detail_away_team"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="@+id/match_detail_versus"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_away_score"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_away_score"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_strip"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="Brighton" />
+
+                <ImageView
+                    android:id="@+id/match_detail_icon_ball"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="24dp"
+                    android:contentDescription="@string/ball"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_strip"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_strip"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_versus"
+                    app:srcCompat="@drawable/ball" />
+
+                <TextView
+                    android:id="@+id/match_detail_home_goals"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:textSize="12sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="@+id/match_detail_icon_ball"
+                    app:layout_constraintEnd_toStartOf="@+id/match_detail_icon_ball"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_round"
+                    app:layout_constraintTop_toTopOf="@+id/match_detail_icon_ball"
+                    tools:text="Rashford" />
+
+                <TextView
+                    android:id="@+id/match_detail_away_goals"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:gravity="end"
+                    android:textSize="12sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="@+id/match_detail_icon_ball"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_time"
+                    app:layout_constraintStart_toEndOf="@+id/match_detail_icon_ball"
+                    app:layout_constraintTop_toTopOf="@+id/match_detail_icon_ball"
+                    tools:text="Rashford" />
+
+                <ImageView
+                    android:id="@+id/match_detail_icon_yellow_card"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="24dp"
+                    android:contentDescription="@string/yellow_card"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_icon_ball"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_icon_ball"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_icon_ball"
+                    app:srcCompat="@drawable/ic_yellow_card" />
+
+                <TextView
+                    android:id="@+id/match_detail_home_yellow_cards"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:gravity="end"
+                    android:textSize="12sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="@+id/match_detail_icon_yellow_card"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_away_goals"
+                    app:layout_constraintStart_toEndOf="@+id/match_detail_icon_yellow_card"
+                    app:layout_constraintTop_toTopOf="@+id/match_detail_icon_yellow_card"
+                    tools:text="Rashford" />
+
+                <TextView
+                    android:id="@+id/match_detail_away_yellow_cards"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:textSize="12sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="@+id/match_detail_icon_yellow_card"
+                    app:layout_constraintEnd_toStartOf="@+id/match_detail_icon_yellow_card"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_home_goals"
+                    app:layout_constraintTop_toTopOf="@+id/match_detail_icon_yellow_card"
+                    tools:text="Rashford" />
+
+                <ImageView
+                    android:id="@+id/match_detail_icon_red_card"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="24dp"
+                    android:contentDescription="@string/red_card"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_icon_yellow_card"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_icon_yellow_card"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_icon_yellow_card"
+                    app:srcCompat="@drawable/ic_red_card" />
+
+                <TextView
+                    android:id="@+id/match_detail_home_red_cards"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:textSize="12sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="@+id/match_detail_icon_red_card"
+                    app:layout_constraintEnd_toStartOf="@+id/match_detail_icon_red_card"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_away_yellow_cards"
+                    app:layout_constraintTop_toTopOf="@+id/match_detail_icon_red_card"
+                    tools:text="Rashford" />
+
+                <TextView
+                    android:id="@+id/match_detail_away_red_cards"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:gravity="end"
+                    android:textSize="12sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="@+id/match_detail_icon_red_card"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_home_yellow_cards"
+                    app:layout_constraintStart_toEndOf="@+id/match_detail_icon_red_card"
+                    app:layout_constraintTop_toTopOf="@+id/match_detail_icon_red_card"
+                    tools:text="Rashford" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/match_detail_squad_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:cardMaxElevation="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/match_detail_info_layout"
+            app:layout_constraintStart_toStartOf="@+id/match_detail_info_layout"
+            app:layout_constraintTop_toBottomOf="@+id/match_detail_info_layout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/match_detail_squad_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/squad"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/match_detail_home_goalkeeper_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/goalkeeper"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_squad_title"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_squad_title" />
+
+                <TextView
+                    android:id="@+id/match_detail_home_goalkeeper"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/match_detail_squad_guideline"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_home_goalkeeper_title"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_home_goalkeeper_title"
+                    tools:text="Boruc" />
+
+                <TextView
+                    android:id="@+id/match_detail_home_defender_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/defender"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_squad_title"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_home_goalkeeper" />
+
+                <TextView
+                    android:id="@+id/match_detail_home_defender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/match_detail_squad_guideline"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_home_defender_title"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_home_defender_title"
+                    tools:text="Mings" />
+
+                <TextView
+                    android:id="@+id/match_detail_home_midfielder_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/midfielder"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_squad_title"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_home_defender" />
+
+                <TextView
+                    android:id="@+id/match_detail_home_midfielder"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/match_detail_squad_guideline"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_home_midfielder_title"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_home_midfielder_title"
+                    tools:text="Juan Mata" />
+
+                <TextView
+                    android:id="@+id/match_detail_home_forward_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/forward"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_squad_title"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_home_midfielder" />
+
+                <TextView
+                    android:id="@+id/match_detail_home_forward"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/match_detail_squad_guideline"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_home_forward_title"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_home_forward_title"
+                    tools:text="Rashford" />
+
+                <TextView
+                    android:id="@+id/match_detail_away_goalkeeper_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/goalkeeper"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_squad_title"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_squad_title" />
+
+                <TextView
+                    android:id="@+id/match_detail_away_goalkeeper"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:gravity="end"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_away_goalkeeper_title"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_squad_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_away_goalkeeper_title"
+                    tools:text="Boruc" />
+
+                <TextView
+                    android:id="@+id/match_detail_away_defender_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/defender"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_squad_title"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_away_goalkeeper" />
+
+                <TextView
+                    android:id="@+id/match_detail_away_defender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:gravity="end"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_away_defender_title"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_squad_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_away_defender_title"
+                    tools:text="Mings" />
+
+                <TextView
+                    android:id="@+id/match_detail_away_midfielder_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/midfielder"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_squad_title"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_away_defender" />
+
+                <TextView
+                    android:id="@+id/match_detail_away_midfielder"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:gravity="end"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_away_midfielder_title"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_squad_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_away_midfielder_title"
+                    tools:text="Juan Mata" />
+
+                <TextView
+                    android:id="@+id/match_detail_away_forward_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/forward"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_squad_title"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_away_midfielder" />
+
+                <TextView
+                    android:id="@+id/match_detail_away_forward"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:gravity="end"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_away_forward_title"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_squad_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_away_forward_title"
+                    tools:text="Rashford" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/match_detail_squad_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="180dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/match_detail_substitutes_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:cardMaxElevation="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/match_detail_squad_layout"
+            app:layout_constraintStart_toStartOf="@+id/match_detail_squad_layout"
+            app:layout_constraintTop_toBottomOf="@+id/match_detail_squad_layout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/match_detail_substitutes_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/substitutes"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/match_detail_away_substitutes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:gravity="end"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/match_detail_substitutes_title"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_substitutes_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_substitutes_title"
+                    tools:text="Lingard" />
+
+                <TextView
+                    android:id="@+id/match_detail_home_substitutes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="64dp"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/match_detail_substitutes_guideline"
+                    app:layout_constraintStart_toStartOf="@+id/match_detail_substitutes_title"
+                    app:layout_constraintTop_toBottomOf="@+id/match_detail_substitutes_title"
+                    tools:text="Lingard" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/match_detail_substitutes_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="180dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
