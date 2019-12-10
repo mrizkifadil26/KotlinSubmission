@@ -91,10 +91,15 @@ class LastMatchAdapter(val context: Context,
 
                 } else {
                     if (match.homeGoals != null && match.awayGoals != null) {
-                        matchIconBall.visibility = View.VISIBLE
 
                         matchHomeGoal.text = match.homeGoals
                         matchAwayGoal.text = match.awayGoals
+
+                        if (match.homeGoals == "" && match.awayGoals == "") {
+                            matchIconBall.visibility = View.GONE
+                        } else {
+                            matchIconBall.visibility = View.VISIBLE
+                        }
                     } else {
                         matchIconBall.visibility = View.GONE
                     }

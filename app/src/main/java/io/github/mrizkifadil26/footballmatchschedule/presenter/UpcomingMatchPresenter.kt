@@ -19,7 +19,12 @@ class UpcomingMatchPresenter(
 
             withContext(Dispatchers.Main) {
                 view.hideSpinner()
-                view.showUpcomingMatchList(data)
+                if (data != null) {
+                    view.showUpcomingMatchList(data)
+                } else {
+                    view.showStatus()
+                }
+
             }
         }
     }

@@ -6,4 +6,5 @@ interface LastMatchView {
     fun showSpinner()
     fun hideSpinner()
     fun showLastMatchList(data: List<LastMatch>)
+    fun showLastMatchStatus()
 }

@@ -6,7 +6,7 @@ data class League(
     @SerializedName("idLeague")
     val id: Int,
     @SerializedName("strLeague")
-    val title: String,
+    val title: String?,
     @SerializedName("strLogo")
-    val logo: String
+    val logo: String?
 )

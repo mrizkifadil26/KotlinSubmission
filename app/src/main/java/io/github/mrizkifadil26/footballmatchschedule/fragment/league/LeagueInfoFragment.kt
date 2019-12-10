@@ -79,8 +79,18 @@ class LeagueInfoFragment(
 
         league_title.text = data.leagueName
         league_country.text = data.countryName
-        league_division.text = (data.division + 1).toString()
-        league_first_match.text = dateFormatter(data.firstEvent, "dd MMM yyyy")
+
+        if (data.division != null) {
+            if (data.division > 10) {
+                league_division.text = ""
+            } else {
+                league_division.text = (data.division.plus(1)).toString()
+            }
+        }
+
+        league_first_match.text = data.firstEvent?.let {
+            dateFormatter(it, "dd MMM yyyy")
+        }
         league_formed.text = data.formedYear.toString()
 
         text_description.text = data.description
@@ -91,27 +101,37 @@ class LeagueInfoFragment(
         btnClick(btn_youtube, data.youtube)
     }
 
-    private fun btnClick(button: ImageButton, data: String) {
-        if (data.isEmpty()) {
+    private fun btnClick(button: ImageButton, data: String?) {
+        if (data != null) {
+            if (data.isEmpty()) {
+                button.setOnClickListener {
+                    val dialog = AlertDialog.Builder(context)
+                    dialog.apply {
+                        setMessage(getString(R.string.link_not_found))
+                    }
+                    dialog.show()
+                }
+            } else {
+                button.setOnClickListener {
+                    uri = Uri.parse("https://$data")
+                    intent = Intent(Intent.ACTION_VIEW, uri)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    intent.setPackage("com.android.chrome")
+                    try {
+                        startActivity(intent)
+                    } catch (ex: ActivityNotFoundException) {
+                        intent.setPackage(null)
+                        startActivity(intent)
+                    }
+                }
+            }
+        } else {
             button.setOnClickListener {
                 val dialog = AlertDialog.Builder(context)
                 dialog.apply {
                     setMessage(getString(R.string.link_not_found))
                 }
                 dialog.show()
-            }
-        } else {
-            button.setOnClickListener {
-                uri = Uri.parse("https://$data")
-                intent = Intent(Intent.ACTION_VIEW, uri)
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                intent.setPackage("com.android.chrome")
-                try {
-                    startActivity(intent)
-                } catch (ex: ActivityNotFoundException) {
-                    intent.setPackage(null)
-                    startActivity(intent)
-                }
             }
         }
     }

@@ -54,4 +54,5 @@
     <string name="removed_favorite">Removed from Favorite</string>
     <string name="favorite_match">Favorite Match</string>
     <string name="leagues">Leagues</string>
+    <string name="no_recent_match">No Recent Match</string>
 </resources>

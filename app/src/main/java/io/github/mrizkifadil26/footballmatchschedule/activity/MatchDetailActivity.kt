@@ -118,6 +118,7 @@ class MatchDetailActivity : AppCompatActivity(), MatchDetailView {
         match_detail_away_team.text = data?.awayTeam
 
         if (data?.homeScore != null && data.awayScore != null) {
+            match_detail_strip.visibility = View.VISIBLE
             match_detail_home_score.text = data.homeScore.toString()
             match_detail_away_score.text = data.awayScore.toString()
 
@@ -144,6 +145,7 @@ class MatchDetailActivity : AppCompatActivity(), MatchDetailView {
                 }
             }
         } else {
+            match_detail_strip.visibility = View.GONE
             match_detail_icon_ball.visibility = View.GONE
             match_detail_home_score.text = ""
             match_detail_away_score.text = ""

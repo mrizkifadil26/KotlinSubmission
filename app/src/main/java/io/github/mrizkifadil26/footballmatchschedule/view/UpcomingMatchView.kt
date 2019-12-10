@@ -5,5 +5,6 @@ import io.github.mrizkifadil26.footballmatchschedule.model.data.UpcomingMatch
 interface UpcomingMatchView {
     fun showSpinner()
     fun hideSpinner()
-    fun showUpcomingMatchList(data: List<UpcomingMatch>?)
+    fun showUpcomingMatchList(data: List<UpcomingMatch>)
+    fun showStatus()
 }

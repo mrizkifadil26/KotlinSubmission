@@ -19,8 +19,10 @@ class LastMatchPresenter(
 
             withContext(Dispatchers.Main) {
                 view.hideSpinner()
-                data?.let {
-                    view.showLastMatchList(it)
+                if (data != null) {
+                    view.showLastMatchList(data)
+                } else {
+                    view.showLastMatchStatus()
                 }
             }
         }

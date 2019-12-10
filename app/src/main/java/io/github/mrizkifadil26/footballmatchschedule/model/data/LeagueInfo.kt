@@ -6,29 +6,29 @@ data class LeagueInfo(
     @SerializedName("idLeague")
     val id: Int,
     @SerializedName("strLeague")
-    val leagueName: String,
+    val leagueName: String?,
     @SerializedName("strDivision")
-    val division: Int,
+    val division: Int?,
     @SerializedName("idCup")
-    val idCup: Int,
+    val idCup: Int?,
     @SerializedName("strCountry")
-    val countryName: String,
+    val countryName: String?,
     @SerializedName("strDescriptionEN")
-    val description: String,
+    val description: String?,
     @SerializedName("strLogo")
-    val logo: String,
+    val logo: String?,
     @SerializedName("strBanner")
     val banner: String?,
     @SerializedName("intFormedYear")
-    val formedYear: Int,
+    val formedYear: Int?,
     @SerializedName("dateFirstEvent")
-    val firstEvent: String,
+    val firstEvent: String?,
     @SerializedName("strWebsite")
-    val website: String,
+    val website: String?,
     @SerializedName("strFacebook")
-    val facebook: String,
+    val facebook: String?,
     @SerializedName("strTwitter")
-    val twitter: String,
+    val twitter: String?,
     @SerializedName("strYoutube")
-    val youtube: String
+    val youtube: String?
 )

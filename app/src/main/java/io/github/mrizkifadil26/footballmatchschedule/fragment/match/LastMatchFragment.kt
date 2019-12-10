@@ -14,12 +14,14 @@ import io.github.mrizkifadil26.footballmatchschedule.repository.MatchRepository
 import io.github.mrizkifadil26.footballmatchschedule.view.LastMatchView
 import kotlinx.android.synthetic.main.fragment_last_match.*
 
-class LastMatchFragment(val idLeague: Int) : Fragment(), LastMatchView {
+class LastMatchFragment(
+    val idLeague: Int
+) : Fragment(), LastMatchView {
 
     val repository: MatchRepository = MatchRepository()
 
     var matches: MutableList<LastMatch> = mutableListOf()
-    lateinit var presenter: LastMatchPresenter
+    private lateinit var presenter: LastMatchPresenter
     lateinit var adapter: LastMatchAdapter
 
     override fun onCreateView(
@@ -58,6 +60,11 @@ class LastMatchFragment(val idLeague: Int) : Fragment(), LastMatchView {
         matches.clear()
         matches.addAll(data)
         adapter.notifyDataSetChanged()
+    }
+
+    override fun showLastMatchStatus() {
+        last_match_status.visibility = View.VISIBLE
+        last_match_status.text = getString(R.string.no_recent_match)
     }
 
 }

@@ -6,13 +6,13 @@ data class UpcomingMatch (
     @SerializedName("idEvent")
     val id: Int,
     @SerializedName("strHomeTeam")
-    val homeTeam: String,
+    val homeTeam: String?,
     @SerializedName("strAwayTeam")
-    val awayTeam: String,
+    val awayTeam: String?,
     @SerializedName("intRound")
-    val round: Int,
+    val round: Int?,
     @SerializedName("strDate")
-    val date: String,
+    val date: String?,
     @SerializedName("strTime")
-    val time: String
+    val time: String?
 )

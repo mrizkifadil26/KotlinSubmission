@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class LastMatch (
     @SerializedName("idEvent")
-    val id: Int?,
+    val id: Int,
     @SerializedName("intRound")
     val round: Int?,
     @SerializedName("dateEvent")
