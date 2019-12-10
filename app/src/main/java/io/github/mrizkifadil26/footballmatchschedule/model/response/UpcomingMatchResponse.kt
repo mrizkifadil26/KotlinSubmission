@@ -5,5 +5,5 @@ import io.github.mrizkifadil26.footballmatchschedule.model.data.UpcomingMatch
 
 class UpcomingMatchResponse (
     @SerializedName("events")
-    val upcomingMatches: List<UpcomingMatch>
+    val upcomingMatches: List<UpcomingMatch>?
 )

@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/search_layout"
+    android:id="@+id/favorite_match_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
@@ -17,47 +17,47 @@
         android:padding="8dp">
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/search_guideline"
+            android:id="@+id/favorite_match_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_begin="191dp" />
 
         <TextView
-            android:id="@+id/search_sport"
+            android:id="@+id/favorite_match_sport"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toStartOf="@+id/search_guideline"
+            app:layout_constraintEnd_toStartOf="@+id/favorite_match_guideline"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Soccer" />
 
         <TextView
-            android:id="@+id/search_league"
+            android:id="@+id/favorite_match_league"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/search_guideline"
+            app:layout_constraintEnd_toStartOf="@+id/favorite_match_guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/search_sport"
+            app:layout_constraintTop_toBottomOf="@+id/favorite_match_sport"
             tools:text="Premier League" />
 
         <TextView
-            android:id="@+id/search_round"
+            android:id="@+id/favorite_match_round"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             tools:text="Match 17"
             android:textSize="12sp"
             android:textStyle="italic"
-            app:layout_constraintStart_toStartOf="@+id/search_league"
-            app:layout_constraintTop_toBottomOf="@+id/search_league" />
+            app:layout_constraintStart_toStartOf="@+id/favorite_match_league"
+            app:layout_constraintTop_toBottomOf="@+id/favorite_match_league" />
 
         <TextView
-            android:id="@+id/search_date"
+            android:id="@+id/favorite_match_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -65,14 +65,14 @@
             android:gravity="end"
             android:textSize="12sp"
             android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="@+id/search_league"
+            app:layout_constraintBottom_toBottomOf="@+id/favorite_match_league"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/search_guideline"
+            app:layout_constraintStart_toStartOf="@+id/favorite_match_guideline"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="24/09/12" />
 
         <TextView
-            android:id="@+id/search_time"
+            android:id="@+id/favorite_match_time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -80,80 +80,78 @@
             android:gravity="end"
             android:textSize="12sp"
             android:textStyle="italic"
-            app:layout_constraintEnd_toEndOf="@+id/search_date"
-            app:layout_constraintStart_toStartOf="@+id/search_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/search_date"
+            app:layout_constraintEnd_toEndOf="@+id/favorite_match_date"
+            app:layout_constraintStart_toStartOf="@+id/favorite_match_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/favorite_match_date"
             tools:text="20:00:00" />
 
         <TextView
-            android:id="@+id/search_home_score"
+            android:id="@+id/favorite_match_home_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
             tools:text="1"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            app:layout_constraintStart_toStartOf="@+id/search_round"
-            app:layout_constraintTop_toTopOf="@+id/search_strip" />
+            app:layout_constraintStart_toStartOf="@+id/favorite_match_round"
+            app:layout_constraintTop_toTopOf="@+id/favorite_match_strip" />
 
         <TextView
-            android:id="@+id/search_strip"
+            android:id="@+id/favorite_match_strip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/strip"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            app:layout_constraintEnd_toStartOf="@+id/search_away_score"
-            app:layout_constraintStart_toEndOf="@+id/search_home_score"
-            app:layout_constraintTop_toBottomOf="@+id/search_round" />
+            app:layout_constraintEnd_toStartOf="@+id/favorite_match_away_score"
+            app:layout_constraintStart_toEndOf="@+id/favorite_match_home_score"
+            app:layout_constraintTop_toBottomOf="@+id/favorite_match_round" />
 
         <TextView
-            android:id="@+id/search_away_score"
+            android:id="@+id/favorite_match_away_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="64dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            app:layout_constraintEnd_toEndOf="@+id/search_date"
-            app:layout_constraintTop_toTopOf="@+id/search_strip"
+            app:layout_constraintEnd_toEndOf="@+id/favorite_match_date"
+            app:layout_constraintTop_toTopOf="@+id/favorite_match_strip"
             tools:text="2" />
 
         <TextView
-            android:id="@+id/search_home_team"
+            android:id="@+id/favorite_match_home_team"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
             android:gravity="center"
+            tools:text="Arsenal"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/search_versus"
-            app:layout_constraintStart_toStartOf="@+id/search_round"
-            app:layout_constraintTop_toBottomOf="@+id/search_home_score"
-            tools:text="Arsenal" />
+            app:layout_constraintBottom_toBottomOf="@+id/favorite_match_versus"
+            app:layout_constraintEnd_toStartOf="@+id/favorite_match_versus"
+            app:layout_constraintStart_toStartOf="@+id/favorite_match_round"
+            app:layout_constraintTop_toTopOf="@+id/favorite_match_versus" />
 
         <TextView
-            android:id="@+id/search_versus"
+            android:id="@+id/favorite_match_versus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/versus"
-            app:layout_constraintBottom_toBottomOf="@+id/search_home_team"
-            app:layout_constraintEnd_toEndOf="@+id/search_strip"
-            app:layout_constraintStart_toStartOf="@+id/search_strip"
-            app:layout_constraintTop_toTopOf="@+id/search_home_team" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/favorite_match_strip"
+            app:layout_constraintStart_toStartOf="@+id/favorite_match_strip"
+            app:layout_constraintTop_toBottomOf="@+id/favorite_match_home_score" />
 
         <TextView
-            android:id="@+id/search_away_team"
+            android:id="@+id/favorite_match_away_team"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
             android:gravity="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/search_date"
-            app:layout_constraintStart_toEndOf="@+id/search_versus"
-            app:layout_constraintTop_toBottomOf="@+id/search_away_score"
+            app:layout_constraintBottom_toBottomOf="@+id/favorite_match_versus"
+            app:layout_constraintEnd_toEndOf="@+id/favorite_match_date"
+            app:layout_constraintStart_toEndOf="@+id/favorite_match_versus"
+            app:layout_constraintTop_toTopOf="@+id/favorite_match_versus"
             tools:text="Brighton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -82,17 +82,25 @@ class SearchActivity : AppCompatActivity(), SearchMatchView {
     override fun showSpinner() {
         progress_search.visibility = View.VISIBLE
         recycler_search.visibility = View.GONE
+        search_status.visibility = View.GONE
     }
 
     override fun hideSpinner() {
         progress_search.visibility = View.GONE
         recycler_search.visibility = View.VISIBLE
+        search_status.visibility = View.GONE
     }
 
-    override fun showMatches(data: List<MatchDetail>) {
-        recycler_search.adapter = adapter
-        matches.clear()
-        matches.addAll(data)
-        adapter.notifyDataSetChanged()
+    override fun showMatches(data: List<MatchDetail>?) {
+        if (!data.isNullOrEmpty()) {
+            recycler_search.adapter = adapter
+            matches.clear()
+            matches.addAll(data)
+            adapter.notifyDataSetChanged()
+        } else {
+            recycler_search.visibility = View.GONE
+            search_status.visibility = View.VISIBLE
+            search_status.text = getString(R.string.no_result)
+        }
     }
 }

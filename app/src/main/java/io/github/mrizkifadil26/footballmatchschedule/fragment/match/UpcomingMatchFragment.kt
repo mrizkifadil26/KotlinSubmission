@@ -53,11 +53,17 @@ class UpcomingMatchFragment(val idLeague: Int) : Fragment(), UpcomingMatchView {
         recycler_upcoming_match.visibility = View.VISIBLE
     }
 
-    override fun showUpcomingMatchList(data: List<UpcomingMatch>) {
-        recycler_upcoming_match.adapter = adapter
-        matches.clear()
-        matches.addAll(data)
-        adapter.notifyDataSetChanged()
+    override fun showUpcomingMatchList(data: List<UpcomingMatch>?) {
+        if (data != null) {
+            recycler_upcoming_match.adapter = adapter
+            matches.clear()
+            matches.addAll(data)
+            adapter.notifyDataSetChanged()
+        } else {
+            recycler_upcoming_match.visibility = View.GONE
+            upcoming_match_status.visibility = View.VISIBLE
+            upcoming_match_status.text = getString(R.string.no_upcoming_match)
+        }
     }
 
 }

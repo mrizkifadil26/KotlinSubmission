@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import io.github.mrizkifadil26.footballmatchschedule.R
 import io.github.mrizkifadil26.footballmatchschedule.activity.MatchDetailActivity
 import io.github.mrizkifadil26.footballmatchschedule.model.data.LastMatch
+import io.github.mrizkifadil26.footballmatchschedule.util.Config.dateFormatter
 
 class LastMatchAdapter(val context: Context,
                        private val matches: List<LastMatch>
@@ -43,6 +44,7 @@ class LastMatchAdapter(val context: Context,
         private val matchTime = view.findViewById<TextView>(R.id.last_match_time)
 
         private val matchHomeScore = view.findViewById<TextView>(R.id.last_match_home_score)
+        private val matchStrip = view.findViewById<TextView>(R.id.last_match_score_strip)
         private val matchAwayScore = view.findViewById<TextView>(R.id.last_match_away_score)
         private val matchHomeGoal = view.findViewById<TextView>(R.id.last_match_home_goal)
         private val matchAwayGoal = view.findViewById<TextView>(R.id.last_match_away_goal)
@@ -51,22 +53,60 @@ class LastMatchAdapter(val context: Context,
 
         fun bindItem(match: LastMatch) {
 
-            matchRound.text = String.format(context.getString(R.string.match), match.round)
-            matchDate.text = match.date
-            matchTime.text = match.time
-
-            matchHomeTeam.text = match.homeTeam
-            matchAwayTeam.text = match.awayTeam
-
-            matchHomeScore.text = match.homeScore.toString()
-            matchAwayScore.text = match.awayScore.toString()
-
-            if (match.homeScore == 0 && match.awayScore == 0) {
-                matchIconBall.visibility = View.GONE
+            if (match.round != null) {
+                matchRound.text = String.format(context.getString(R.string.match), match.round)
             } else {
-                matchIconBall.visibility = View.VISIBLE
-                matchHomeGoal.text = match.homeGoals
-                matchAwayGoal.text = match.awayGoals
+                matchRound.text = ""
+            }
+
+            if (match.date != null) {
+                matchDate.text = dateFormatter(match.date, "dd/MM/yyyy")
+            } else {
+                matchDate.text = ""
+            }
+
+            if (match.time != null) {
+                matchTime.text = match.time
+            } else {
+                matchTime.text = ""
+            }
+
+            if (match.homeTeam != null && match.awayTeam != null) {
+                matchHomeTeam.text = match.homeTeam
+                matchAwayTeam.text = match.awayTeam
+            } else {
+                matchHomeTeam.text = ""
+                matchAwayTeam.text = ""
+            }
+
+            if (match.homeScore != null && match.awayScore != null) {
+                matchStrip.visibility = View.VISIBLE
+                matchHomeScore.text = match.homeScore.toString()
+                matchAwayScore.text = match.awayScore.toString()
+
+                if (match.homeScore == 0 && match.awayScore == 0) {
+                    matchIconBall.visibility = View.GONE
+                    matchHomeGoal.text = ""
+                    matchAwayGoal.text = ""
+
+                } else {
+                    if (match.homeGoals != null && match.awayGoals != null) {
+                        matchIconBall.visibility = View.VISIBLE
+
+                        matchHomeGoal.text = match.homeGoals
+                        matchAwayGoal.text = match.awayGoals
+                    } else {
+                        matchIconBall.visibility = View.GONE
+                    }
+                }
+            } else {
+                matchStrip.visibility = View.GONE
+                matchIconBall.visibility = View.GONE
+                matchHomeScore.text = ""
+                matchAwayScore.text = ""
+
+                matchHomeGoal.text = ""
+                matchAwayGoal.text = ""
             }
 
             parentLayout.setOnClickListener {

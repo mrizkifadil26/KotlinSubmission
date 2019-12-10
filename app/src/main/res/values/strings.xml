@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">FootballMatchSchedule</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <string-array name="country_name">
         <item>England</item>
         <item>France</item>
@@ -49,4 +46,12 @@
     <string name="logo_facebook">Facebook Logo</string>
     <string name="logo_youtube">Youtube Logo</string>
     <string name="logo_web">Web Logo</string>
+    <string name="favorites">Favorites</string>
+    <string name="home">Home</string>
+    <string name="no_upcoming_match">No Upcoming Match</string>
+    <string name="no_result">No Result</string>
+    <string name="no_data">No Data</string>
+    <string name="removed_favorite">Removed from Favorite</string>
+    <string name="favorite_match">Favorite Match</string>
+    <string name="leagues">Leagues</string>
 </resources>

@@ -5,5 +5,5 @@ import io.github.mrizkifadil26.footballmatchschedule.model.data.MatchDetail
 
 data class MatchQueryResponse (
     @SerializedName("event")
-    val matches: List<MatchDetail>
+    val matches: List<MatchDetail>?
 )

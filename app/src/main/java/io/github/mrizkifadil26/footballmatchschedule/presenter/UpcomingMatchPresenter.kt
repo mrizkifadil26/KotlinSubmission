@@ -19,9 +19,7 @@ class UpcomingMatchPresenter(
 
             withContext(Dispatchers.Main) {
                 view.hideSpinner()
-                data?.let {
-                    view.showUpcomingMatchList(it)
-                }
+                view.showUpcomingMatchList(data)
             }
         }
     }

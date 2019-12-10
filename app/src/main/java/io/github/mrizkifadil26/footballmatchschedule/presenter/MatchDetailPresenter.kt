@@ -19,9 +19,12 @@ class MatchDetailPresenter(
 
             withContext(Dispatchers.Main) {
                 view.hideSpinner()
-                data?.let {
-                    view.showMatchDetail(it[0])
+                if (data != null) {
+                    view.showMatchDetail(data[0])
+                } else {
+                    view.showStatus()
                 }
+
             }
         }
     }

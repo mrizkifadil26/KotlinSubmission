@@ -1,7 +1,7 @@
 package io.github.mrizkifadil26.footballmatchschedule.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import io.github.mrizkifadil26.footballmatchschedule.R
 import io.github.mrizkifadil26.footballmatchschedule.fragment.league.LeagueInfoFragment

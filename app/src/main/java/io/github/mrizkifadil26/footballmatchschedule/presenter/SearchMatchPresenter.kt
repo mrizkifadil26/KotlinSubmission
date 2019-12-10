@@ -20,9 +20,7 @@ class SearchMatchPresenter (
 
             withContext(Dispatchers.Main) {
                 view.hideSpinner()
-                filteredData?.let {
-                    view.showMatches(it)
-                }
+                view.showMatches(filteredData)
             }
         }
     }

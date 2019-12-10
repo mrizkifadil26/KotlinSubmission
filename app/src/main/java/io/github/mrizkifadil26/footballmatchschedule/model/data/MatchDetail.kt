@@ -5,23 +5,21 @@ import com.google.gson.annotations.SerializedName
 data class MatchDetail(
     //    Basic Info
     @SerializedName("idEvent")
-    val id: Int,
+    val id: Int?,
     @SerializedName("strSport")
-    val sport: String,
+    val sport: String?,
     @SerializedName("strLeague")
-    val league: String,
+    val league: String?,
     @SerializedName("strHomeTeam")
-    val homeTeam: String,
+    val homeTeam: String?,
     @SerializedName("strAwayTeam")
-    val awayTeam: String,
+    val awayTeam: String?,
     @SerializedName("intRound")
-    val round: Int,
+    val round: Int?,
     @SerializedName("dateEvent")
-    val matchDate: String,
-    @SerializedName("strDate")
-    val date: String,
+    val date: String?,
     @SerializedName("strTime")
-    val time: String,
+    val time: String?,
 
     //    Match Info
     @SerializedName("intHomeScore")

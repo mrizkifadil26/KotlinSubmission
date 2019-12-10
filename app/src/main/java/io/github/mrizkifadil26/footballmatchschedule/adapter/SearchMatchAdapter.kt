@@ -46,33 +46,60 @@ class SearchMatchAdapter (
         private val searchMatchStrip = view.findViewById<TextView>(R.id.search_strip)
         private val searchAwayScore = view.findViewById<TextView>(R.id.search_away_score)
         private val searchHomeTeam = view.findViewById<TextView>(R.id.search_home_team)
+        private val searchVersus = view.findViewById<TextView>(R.id.search_versus)
         private val searchAwayTeam= view.findViewById<TextView>(R.id.search_away_team)
 
         fun bindItem(match: MatchDetail) {
 
-            searchSport.text = match.sport
-            searchLeague.text = match.league
-            if (match.round == 0) {
-                searchRound.text = ""
+            if (match.sport != null) {
+                searchSport.text = match.sport
             } else {
-                searchRound.text = String.format(context.getString(R.string.match), match.round)
+                searchSport.text = ""
             }
 
-            searchDate.text = dateFormatter(match.matchDate, "dd/MM/yyyy")
-            searchTime.text = match.time
-
-            if (match.homeScore == null && match.awayScore == null) {
-                searchMatchStrip.visibility = View.GONE
-                searchHomeScore.text = ""
-                searchAwayScore.text = ""
+            if (match.league != null) {
+                searchLeague.text = match.league
             } else {
+                searchLeague.text = match.league
+            }
+
+            if (match.round != null) {
+                searchRound.text = String.format(context.getString(R.string.match), match.round)
+            } else {
+                searchRound.text = ""
+            }
+
+            if (match.date != null) {
+                searchDate.text = dateFormatter(match.date, "dd/MM/yyyy")
+            } else {
+                searchDate.text = ""
+            }
+
+            if (match.time != null) {
+                searchTime.text = match.time
+            } else {
+                searchTime.text = ""
+            }
+
+            if (match.homeScore != null && match.awayScore != null) {
                 searchMatchStrip.visibility = View.VISIBLE
                 searchHomeScore.text = match.homeScore.toString()
                 searchAwayScore.text = match.awayScore.toString()
+            } else {
+                searchMatchStrip.visibility = View.GONE
+                searchHomeScore.text = ""
+                searchAwayScore.text = ""
             }
 
-            searchHomeTeam.text = match.homeTeam
-            searchAwayTeam.text = match.awayTeam
+            if (match.homeTeam != null && match.awayTeam != null) {
+                searchVersus.visibility = View.VISIBLE
+                searchHomeTeam.text = match.homeTeam
+                searchAwayTeam.text = match.awayTeam
+            } else {
+                searchVersus.visibility = View.GONE
+                searchHomeTeam.text = ""
+                searchAwayTeam.text = ""
+            }
 
             parentLayout.setOnClickListener {
                 val intent = Intent(context, MatchDetailActivity::class.java)

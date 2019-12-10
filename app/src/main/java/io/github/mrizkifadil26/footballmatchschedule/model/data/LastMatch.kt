@@ -4,25 +4,23 @@ import com.google.gson.annotations.SerializedName
 
 data class LastMatch (
     @SerializedName("idEvent")
-    val id: Int,
-    @SerializedName("strEvent")
-    val matchName: String,
+    val id: Int?,
     @SerializedName("intRound")
-    val round: Int,
-    @SerializedName("strDate")
-    val date: String,
+    val round: Int?,
+    @SerializedName("dateEvent")
+    val date: String?,
     @SerializedName("strTime")
-    val time: String,
+    val time: String?,
     @SerializedName("strHomeTeam")
-    val homeTeam: String,
+    val homeTeam: String?,
     @SerializedName("strAwayTeam")
-    val awayTeam: String,
+    val awayTeam: String?,
     @SerializedName("intHomeScore")
-    val homeScore: Int,
+    val homeScore: Int?,
     @SerializedName("intAwayScore")
-    val awayScore: Int,
+    val awayScore: Int?,
     @SerializedName("strHomeGoalDetails")
-    val homeGoals: String,
+    val homeGoals: String?,
     @SerializedName("strAwayGoalDetails")
-    val awayGoals: String
+    val awayGoals: String?
 )
